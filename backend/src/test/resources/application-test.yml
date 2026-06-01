@@ -1,0 +1,11 @@
+spring:
+  datasource:
+    url: jdbc:sqlite:target/barber-app-test.db
+    driver-class-name: org.sqlite.JDBC
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+barber:
+  cleanup:
+    enabled: false

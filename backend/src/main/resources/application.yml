@@ -1,0 +1,37 @@
+spring:
+  application:
+    name: barber-app-backend
+  datasource:
+    url: jdbc:sqlite:barber_app.db
+    driver-class-name: org.sqlite.JDBC
+  jpa:
+    database-platform: org.hibernate.community.dialect.SQLiteDialect
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+
+logging:
+  level:
+    com.barberapp: INFO
+    org.springframework.web.filter.CommonsRequestLoggingFilter: DEBUG
+
+barber:
+  cleanup:
+    enabled: true
+    retention-days: 2
+    cron: "0 0 3 * * *"
+  services:
+    HAIRCUT: 20
+    BEARD: 10
+    HAIR_AND_BEARD: 30
+    HEAD_MASSAGE: 25
